@@ -1,0 +1,31 @@
+body {
+    overflow-x: hidden;
+    outline-color: rgb(23, 24, 24);
+    text-decoration: none;
+background-color: rgb(165, 220, 220);
+
+}
+.hello {
+    color: rgb(13, 13, 14);
+    font-size: large;
+    font-weight: bold;
+    background-color: rgb(179, 183, 183);
+}
+#dash {
+    position: fixed;
+    position:relative;
+top:2em ;
+left:10px;
+position: sticky;
+position: static;
+
+
+}
+#det{
+    position: absolute;
+    top:10em
+}
+#details{
+   box-shadow: 10px 10px 30px rgb(0, 238, 255); 
+
+}

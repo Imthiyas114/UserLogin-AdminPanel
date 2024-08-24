@@ -1,0 +1,38 @@
+.signup{
+    color: rgb(235, 10, 66);
+    position: absolute;
+    left: 35%;
+    font-size: large;
+    box-shadow: 2px 2px 100px rgb(41, 5, 5);
+    padding: 2px;
+    font-weight: bold;
+    top:0%
+}
+.exampleInputEmail1{
+    width: 300px;
+}
+#error{
+    color: rgb(43, 216, 13);
+}
+body{
+    background-image: url('https://th.bing.com/th/id/OIP.L_APq7gtbIKlL_s-SGE2UgHaEo?w=277&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7');
+    background-size: 100%;
+    background-repeat: no-repeat; 
+    margin-top: 0%;
+    overflow-y: hidden;
+    color: rgb(181, 173, 173);
+    object-fit: fill;
+}
+.input-small {
+    width: 100%; 
+    border-color: rgb(10, 10, 245);
+    border-radius: 10px;
+    inline-size: 30em;
+    color: black; 
+}
+#signupForm{
+    color: rgb(206, 206, 209);
+    margin-top: 10em;
+    margin-left: 10em;
+
+}

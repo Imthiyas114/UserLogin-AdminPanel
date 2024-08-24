@@ -1,0 +1,96 @@
+<link rel="stylesheet" href="/stylesheets/style2.css">
+<p class="signup"></p>
+<form id="signupForm" action="/signup/verifySignup" method="post">
+    <div class="mb-2">
+        <label for="fullName" class="form-label btn bg-info">Full Name</label>
+        <input type="text" class="form-control input-small" id="fullName" name="fullName" aria-describedby="emailHelp">
+
+        <label for="email" class="btn bg-info">Email address</label>
+        <input type="email" class="form-control input-small" id="email" name="email" aria-describedby="emailHelp" onkeyup="validateEmail()">
+        
+        <div id="error" class="form-text">We'll never share your email with anyone else.</div>
+         <label for="phone" class="form-label btn bg-info">Mobile</label>
+<input type="text" class="form-control input-small" id="phone" name="phone" aria-describedby="emailHelp">
+    </div>
+    <label for="batch" class="form-label btn bg-info">BroCamp Batch</label>
+    <input type="text" class="form-control input-small" id="batch" name="batch" aria-describedby="emailHelp">
+   
+<label for="domain" class="form-label btn bg-info">Your Domain</label>
+    <input type="text" class="form-control input-small" id="domain" name="domain" aria-describedby="emailHelp">
+    <label for="username" class="form-label btn bg-info">Username</label>
+    <input type="text" class="form-control input-small" id="username" name="username" aria-describedby="emailHelp">
+    <div class="mb-2">
+        <label for="password" class="form-label btn bg-info">Password</label>
+        <input type="password" class="form-control input-small" id="password" name="password">
+    </div>
+    <input class="log btn bg-primary" id="registrBtn" type="submit" value="Submit">
+</form>
+<div id="confirm"></div>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+    var typingEffect = new Typed(".signup", {
+        strings: ["Register Now and Be Part of IMTHIYAS DEV-Community"],
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 0,
+        backDelay: 2000
+    });
+});
+
+       form.addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const formData = new FormData(form);
+for (const [key, value] of formData.entries()) {
+    console.log(`${key}: ${value}`);
+}
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = value;
+    });
+
+    try {
+        const response = await fetch('/signup/verifySignup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            document.getElementById('confirm').innerText = result.message;
+            setTimeout(() => {
+                window.location.href = '/'; 
+            }, 3000);
+        } else {
+            document.getElementById('confirm').innerText = result.error;
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('confirm').innerText = 'An unexpected error occurred.';
+    }
+});
+
+
+
+    function validateEmail() {
+        const email = document.getElementById("email");
+        const errorDiv = document.getElementById("error");
+
+        if (!email.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+            errorDiv.innerHTML = "Please enter a valid email";
+            email.style.borderColor = "red";
+            email.style.color = "black";
+            errorDiv.style.color = "red";
+            return false;
+        } else {
+            errorDiv.innerHTML = "We'll never share your email with anyone else";
+            email.style.borderColor = "green";
+            email.style.color = "black";
+            errorDiv.style.color = "green";
+            return true;
+        }
+    }
+</script>
