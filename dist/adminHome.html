@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+
+  
+   
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand btn bg-primary text-white" href="#">Admin World</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/userDetails">User Details</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">HELLO <span class="hello"></span></a>
+                </li>
+            </ul>
+            <button class="btn bg-primary text-white "><a class="dropdown-item" href="/signup">addUser</a></button>
+             <form class="form-inline my-2 my-lg-0" method="GET" action="/search">
+            <input id="place" class="form-control mr-sm-2" type="search" name="fullname" placeholder="Search by Full Name" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                 <a href="/logout" class="btn btn-danger my-2 my-sm-0">Logout</a>
+        </form>
+        
+        </div>
+    </nav>
+   
+    <div class="container mt-5" id="det" >
+        <h1>USER DETAILS</h1>
+        <table class="table table-striped" id="dash">
+            <thead class="bg-info">
+                <tr>
+                    <th>Full Name</th>
+                    <th>BroCamp Batch</th>
+                    <th>Mobile</th>
+                    <th>Username</th>
+                
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+   
+</body>
+</html>
